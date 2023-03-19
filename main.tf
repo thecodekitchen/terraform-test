@@ -21,7 +21,7 @@ provider "aws" {
 }
 
 provider "google" {
-  project = "podcast-platform-23"
+  project = var.GOOGLE_PROJECT_ID
   region = "us-central1"
 }
 
@@ -35,10 +35,6 @@ resource "azurerm_resource_group" "example" {
   location = "eastus"
 }
 
-variable "ADMIN_PASSWORD" {
-  type    = string
-  description = "The admin password for the virtual machine"
-}
 
 resource "azurerm_linux_virtual_machine" "hello-azure" {
   name                  = "terraform-vm"
